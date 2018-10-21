@@ -1,0 +1,14 @@
+{
+    "cSpell.words": [
+        "Dependences",
+        "acron",
+        "envify",
+        "estree",
+        "ifeq",
+        "serverless",
+        "setx",
+        "sudoo",
+        "tshook"
+    ],
+    "tslint.configFile": "typescript/tslint.json"
+}
