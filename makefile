@@ -52,3 +52,7 @@ else
 	@rm -rf .nyc_output
 	@rm -rf coverage
 endif
+
+publish: install tests build
+	@echo "[INFO] Publishing package"
+	@npm publish --access=public

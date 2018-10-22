@@ -1,5 +1,5 @@
 {
-  "name": "sudoo-lambda",
+  "name": "@sudoo/lambda",
   "version": "1.0.0",
   "description": ":crystal_ball: Lambda",
   "main": "dist/index.js",
