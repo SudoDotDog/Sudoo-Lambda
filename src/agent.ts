@@ -1,30 +1,40 @@
 /**
  * @author WMXPY
  * @namespace Lambda
- * @description Response
+ * @description Agent
  */
 
 import { Callback } from "aws-lambda";
 import { RESPONSE_CODE } from "./declare";
 
-export class Response {
+export class Agent {
+
+    public static from(callback: Callback): Agent {
+
+        return new Agent(callback);
+    }
 
     private _body: Map<string, any>;
     private _callback: Callback;
 
-    public constructor(callback: Callback) {
+    private constructor(callback: Callback) {
 
         this._body = new Map<string, any>();
         this._callback = callback;
     }
 
-    public add(name: string, value: any): Response {
+    public get length(): number {
+
+        return this._body.size;
+    }
+
+    public add(name: string, value: any): Agent {
 
         this._body.set(name, value);
         return this;
     }
 
-    public succeed(): Response {
+    public succeed(): Agent {
 
         this._callback(null, {
             code: RESPONSE_CODE.SUCCEED,
@@ -33,7 +43,7 @@ export class Response {
         return this;
     }
 
-    public failed(code: RESPONSE_CODE): Response {
+    public failed(code: RESPONSE_CODE): Agent {
 
         this._callback(code.toString(), {
             code,
