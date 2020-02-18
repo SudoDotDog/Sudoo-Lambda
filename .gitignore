@@ -17,9 +17,8 @@ lib-cov
 # Coverage directory used by tools like istanbul
 coverage
 
-# temp
-dist
-temp
+# Build
+app
 
 # lock
 yarn.lock

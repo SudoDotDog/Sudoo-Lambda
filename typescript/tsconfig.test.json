@@ -1,28 +1,20 @@
 {
-    "compileOnSave": false,
     "compilerOptions": {
-        "alwaysStrict": true,
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
-        "inlineSourceMap": true,
         "lib": [
+            "dom",
+            "es5",
+            "es2015",
             "es2016",
-            "es6"
+            "es2017"
         ],
         "module": "commonjs",
         "moduleResolution": "node",
         "noImplicitAny": true,
         "noImplicitReturns": true,
-        "noImplicitThis": true,
-        "outDir": "./dist",
-        "removeComments": true,
-        "resolveJsonModule": true,
+        "sourceMap": true,
         "strict": true,
-        "strictNullChecks": true,
-        "target": "es5",
-    },
-    "exclude": [
-        "node_modules",
-        "test"
-    ]
+        "target": "es6"
+    }
 }
