@@ -6,10 +6,12 @@
         "connor",
         "envify",
         "estree",
+        "fileoverview",
         "ifeq",
         "serverless",
         "setx",
         "sudoo",
+        "triforce",
         "tshook"
     ],
     "tslint.configFile": "typescript/tslint.json"
