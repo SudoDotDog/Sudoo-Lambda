@@ -23,6 +23,7 @@
     "connor": "^2.7.0"
   },
   "devDependencies": {
+    "@sudoo/io": "^1.8.0",
     "@sudoo/triforce": "^2.7.12",
     "@types/aws-lambda": "^8.10.61",
     "@types/sinon": "^9.0.4",
@@ -41,9 +42,6 @@
       "text-summary"
     ],
     "report-dir": "coverage",
-    "require": [
-      "./test/tshook.js"
-    ],
     "sourceMap": true
   }
 }
