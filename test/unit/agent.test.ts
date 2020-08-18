@@ -1,13 +1,14 @@
 /**
  * @author WMXPY
  * @namespace Lambda
- * @fileoverview Agent test
+ * @fileoverview Agent
+ * @override Unit
  */
 
 import { expect } from 'chai';
 import * as Chance from 'chance';
 import * as Sinon from 'sinon';
-import { Agent, RESPONSE_CODE } from '../src';
+import { Agent, RESPONSE_CODE } from '../../src';
 
 describe('Given a <Agent> class', function (this: Mocha.Suite): void {
 
