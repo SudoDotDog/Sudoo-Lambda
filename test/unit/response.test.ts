@@ -13,6 +13,7 @@ import { createLambdaResponse, createSucceedLambdaResponse } from "../../src";
 
 describe('Given [Response] Helper Methods', (): void => {
 
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const chance: Chance.Chance = new Chance('lambda-response');
 
     it('should be able to create response', (): void => {
