@@ -8,6 +8,7 @@
         "estree",
         "fileoverview",
         "ifeq",
+        "mocharc",
         "serverless",
         "setx",
         "sudoo",
