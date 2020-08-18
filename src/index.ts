@@ -4,5 +4,5 @@
  * @description Index
  */
 
-export { Agent } from './agent';
-export { RESPONSE_CODE } from './declare';
+export * from "./response";
+
