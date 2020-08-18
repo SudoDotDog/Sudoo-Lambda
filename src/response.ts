@@ -10,7 +10,7 @@ import { fixUndefinedStringifyBody, LambdaResponseBodyType } from './declare';
 
 export const createLambdaResponse = (
     code: HTTP_RESPONSE_CODE,
-    body: LambdaResponseBodyType,
+    body?: LambdaResponseBodyType,
 ): APIGatewayProxyResult => {
 
     if (typeof body === 'string'
