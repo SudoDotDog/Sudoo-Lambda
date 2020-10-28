@@ -6,3 +6,11 @@
 [![downloads](https://img.shields.io/npm/dm/@sudoo/lambda.svg)](https://www.npmjs.com/package/@sudoo/lambda)
 
 :crystal_ball: Lambda
+
+## Install
+
+```sh
+yarn add @sudoo/lambda
+# Or
+npm install @sudoo/lambda --save
+```

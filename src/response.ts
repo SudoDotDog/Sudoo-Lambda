@@ -22,7 +22,7 @@ export const createLambdaResponse = (
             body: fixUndefinedStringifyBody({
                 message: body,
             }),
-        }
+        };
     }
 
     if (typeof body !== 'object') {
@@ -30,7 +30,7 @@ export const createLambdaResponse = (
         return {
             statusCode: code,
             body: fixUndefinedStringifyBody(body),
-        }
+        };
     }
 
     return {

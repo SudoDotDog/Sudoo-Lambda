@@ -3,6 +3,7 @@
         "Dependences",
         "WMXPY",
         "acron",
+        "codecov",
         "connor",
         "envify",
         "estree",
