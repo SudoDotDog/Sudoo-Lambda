@@ -21,7 +21,7 @@
   "devDependencies": {
     "@sudoo/io": "^1.8.0",
     "@sudoo/triforce": "^2.9.28",
-    "@types/aws-lambda": "^8.10.79"
+    "@types/aws-lambda": "^8.10.80"
   },
   "nyc": {
     "extension": [
