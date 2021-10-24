@@ -16,7 +16,7 @@
   },
   "homepage": "https://github.com/SudoDotDog/Sudoo-Lambda#readme",
   "dependencies": {
-    "@sudoo/magic": "^1.8.0"
+    "@sudoo/magic": "^1.9.0"
   },
   "devDependencies": {
     "@sudoo/io": "^1.8.0",
