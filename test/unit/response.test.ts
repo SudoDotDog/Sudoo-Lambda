@@ -25,6 +25,9 @@ describe('Given [Response] Helper Methods', (): void => {
         expect(response).to.be.deep.equal({
             statusCode: HTTP_RESPONSE_CODE.OK,
             body: "{}",
+            headers: undefined,
+            multiValueHeaders: undefined,
+            isBase64Encoded: false,
         });
     });
 
@@ -35,6 +38,9 @@ describe('Given [Response] Helper Methods', (): void => {
         expect(response).to.be.deep.equal({
             statusCode: HTTP_RESPONSE_CODE.OK,
             body: "{}",
+            headers: undefined,
+            multiValueHeaders: undefined,
+            isBase64Encoded: false,
         });
     });
 });

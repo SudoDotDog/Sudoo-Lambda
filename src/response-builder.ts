@@ -56,6 +56,21 @@ export class LambdaResponseBuilder {
 
     public addBody(key: string, value: any): this {
 
+        if (typeof this._body === 'string') {
+            this._body += String(value);
+            return this;
+        }
+
+        if (typeof this._body === 'number') {
+            this._body += Number(value);
+            return this;
+        }
+
+        if (typeof this._body === 'boolean') {
+            this._body = Boolean(value);
+            return this;
+        }
+
         this._body[key] = value;
         return this;
     }
