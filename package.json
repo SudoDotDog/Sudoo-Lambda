@@ -1,7 +1,7 @@
 {
   "name": "@sudoo/lambda",
-  "version": "2.0.0",
-  "description": ":crystal_ball: Lambda",
+  "version": "2.1.0",
+  "description": "Lambda",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/SudoDotDog/Sudoo-Lambda.git"
