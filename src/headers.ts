@@ -27,7 +27,7 @@ export const createConstructHeaders = (
 
     for (const key of keys) {
 
-        const value: LambdaResponseHeaderElement = singleValueHeaders[key];
+        const value: LambdaResponseHeaderElement = headers[key];
 
         if (Array.isArray(value)) {
             multiValueHeaders[key] = value;
