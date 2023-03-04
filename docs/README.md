@@ -1,11 +1,11 @@
 # Sudoo-Lambda
 
-[![Build Status](https://travis-ci.com/SudoDotDog/Sudoo-Lambda.svg?branch=master)](https://travis-ci.com/SudoDotDog/Sudoo-Lambda)
+[![Continuous Integration](https://github.com/SudoDotDog/Sudoo-Lambda/actions/workflows/ci.yml/badge.svg)](https://github.com/SudoDotDog/Sudoo-Lambda/actions/workflows/ci.yml)
 [![codecov](https://codecov.io/gh/SudoDotDog/Sudoo-Lambda/branch/master/graph/badge.svg)](https://codecov.io/gh/SudoDotDog/Sudoo-Lambda)
-[![npm version](https://badge.fury.io/js/%40sudoo%2Flambda.svg)](https://badge.fury.io/js/%40sudoo%2Flambda)
+[![npm version](https://badge.fury.io/js/%40sudoo%2Flambda.svg)](https://www.npmjs.com/package/@sudoo/lambda)
 [![downloads](https://img.shields.io/npm/dm/@sudoo/lambda.svg)](https://www.npmjs.com/package/@sudoo/lambda)
 
-:crystal_ball: Lambda
+Lambda
 
 ## Install
 
