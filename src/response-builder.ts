@@ -6,26 +6,22 @@
 
 import { HTTP_RESPONSE_CODE } from '@sudoo/magic';
 import { APIGatewayProxyResult } from 'aws-lambda';
-import { LambdaResponseBodyType, LambdaResponseHeaderElement, LambdaResponseHeaderType } from './declare';
-import { createLambdaResponse } from './response';
+import { fixUndefinedStringifyBody, LambdaResponseBodyType, LambdaResponseHeaderElement, LambdaResponseHeaderType } from './declare';
+import { ConstructHeadersResult, createConstructHeaders } from './headers';
 
 export class LambdaResponseBuilder {
 
-    public static create(statusCode: HTTP_RESPONSE_CODE): LambdaResponseBuilder {
+    public static create(): LambdaResponseBuilder {
 
-        return new LambdaResponseBuilder(statusCode);
+        return new LambdaResponseBuilder();
     }
-
-    private readonly _statusCode: HTTP_RESPONSE_CODE;
 
     private _headers: LambdaResponseHeaderType;
     private _body: LambdaResponseBodyType;
 
     private _isBase64Encoded: boolean;
 
-    private constructor(statusCode: HTTP_RESPONSE_CODE) {
-
-        this._statusCode = statusCode;
+    private constructor() {
 
         this._headers = {};
         this._body = {};
@@ -87,13 +83,34 @@ export class LambdaResponseBuilder {
         return this;
     }
 
-    public build(): APIGatewayProxyResult {
+    public build(statusCode: HTTP_RESPONSE_CODE): APIGatewayProxyResult {
 
-        return createLambdaResponse(
-            this._statusCode,
-            this._body,
-            this._headers,
-            this._isBase64Encoded,
-        );
+        const constructedHeaders: ConstructHeadersResult =
+            createConstructHeaders(this._headers);
+
+        if (typeof this._body === 'string'
+            && typeof this._body === 'number'
+            && typeof this._body === 'boolean') {
+
+            return {
+
+                statusCode,
+                body: fixUndefinedStringifyBody({
+                    message: this._body,
+                }),
+                headers: constructedHeaders.headers,
+                multiValueHeaders: constructedHeaders.multiValueHeaders,
+                isBase64Encoded: this._isBase64Encoded,
+            };
+        }
+
+        return {
+
+            statusCode,
+            body: fixUndefinedStringifyBody(this._body),
+            headers: constructedHeaders.headers,
+            multiValueHeaders: constructedHeaders.multiValueHeaders,
+            isBase64Encoded: this._isBase64Encoded,
+        };
     }
 }
