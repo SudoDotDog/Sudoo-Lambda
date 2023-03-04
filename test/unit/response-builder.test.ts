@@ -9,7 +9,7 @@ import { HTTP_RESPONSE_CODE } from "@sudoo/magic";
 import { APIGatewayProxyResult } from "aws-lambda";
 import { expect } from "chai";
 import * as Chance from "chance";
-import { createLambdaResponse, createSucceedLambdaResponse } from "../../src";
+import { LambdaResponseBuilder } from "../../src";
 
 describe('Given [Response] Helper Methods', (): void => {
 
@@ -18,9 +18,9 @@ describe('Given [Response] Helper Methods', (): void => {
 
     it('should be able to create response', (): void => {
 
-        const response: APIGatewayProxyResult = createLambdaResponse(
-            HTTP_RESPONSE_CODE.OK,
-        );
+        const response: APIGatewayProxyResult = LambdaResponseBuilder
+            .create()
+            .build(HTTP_RESPONSE_CODE.OK);
 
         expect(response).to.be.deep.equal({
             statusCode: HTTP_RESPONSE_CODE.OK,
@@ -33,7 +33,9 @@ describe('Given [Response] Helper Methods', (): void => {
 
     it('should be able to succeed response', (): void => {
 
-        const response: APIGatewayProxyResult = createSucceedLambdaResponse();
+        const response: APIGatewayProxyResult = LambdaResponseBuilder
+            .create()
+            .build(HTTP_RESPONSE_CODE.OK);
 
         expect(response).to.be.deep.equal({
             statusCode: HTTP_RESPONSE_CODE.OK,

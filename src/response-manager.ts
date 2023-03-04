@@ -4,7 +4,6 @@
  * @description Response Manager
  */
 
-import { HTTP_RESPONSE_CODE } from '@sudoo/magic';
 import { LambdaResponseBuilder } from './response-builder';
 
 export type LambdaResponseManagerMiddleware = (builder: LambdaResponseBuilder) => void;
@@ -29,9 +28,9 @@ export class LambdaResponseManager {
         return this;
     }
 
-    public createBuilder(statusCode: HTTP_RESPONSE_CODE): LambdaResponseBuilder {
+    public createBuilder(): LambdaResponseBuilder {
 
-        const builder: LambdaResponseBuilder = LambdaResponseBuilder.create(statusCode);
+        const builder: LambdaResponseBuilder = LambdaResponseBuilder.create();
 
         this._middlewareSet.forEach((middleware: LambdaResponseManagerMiddleware) => {
 
