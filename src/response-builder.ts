@@ -5,7 +5,9 @@
  */
 
 import { HTTP_RESPONSE_CODE } from '@sudoo/magic';
+import { APIGatewayProxyResult } from 'aws-lambda';
 import { LambdaResponseBodyType, LambdaResponseHeaderElement, LambdaResponseHeaderType } from './declare';
+import { createLambdaResponse } from './response';
 
 export class LambdaResponseBuilder {
 
@@ -68,5 +70,15 @@ export class LambdaResponseBuilder {
 
         this._isBase64Encoded = isBase64Encoded;
         return this;
+    }
+
+    public build(): APIGatewayProxyResult {
+
+        return createLambdaResponse(
+            this._statusCode,
+            this._body,
+            this._headers,
+            this._isBase64Encoded,
+        );
     }
 }
